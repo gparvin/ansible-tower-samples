@@ -13,7 +13,7 @@
               text: Policy Violation
           - type: section
             text:
-              type: mrkdwn
+            - type: mrkdwn
               text: |-
                 Policy {{ policy_name }} in namespace {{ policy_namespace }} is NonCompliant
             - type: mrkdwn
