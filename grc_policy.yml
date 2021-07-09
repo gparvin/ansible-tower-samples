@@ -16,6 +16,8 @@
             - type: mrkdwn
               text: |-
                 Policy {{ policy_name }} in namespace {{ policy_namespace }} is NonCompliant
+          - type: section
+            text:
             - type: mrkdwn
               text: |-
                 <https://multicloud-console.apps.{{ cluster_name }}/multicloud/policies/all|*Advanced Cluster Management Hub Policies*>
