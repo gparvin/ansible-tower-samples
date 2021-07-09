@@ -10,7 +10,7 @@
         blocks:
           - type: header
             text:
-              text: *Policy Violation*
+              text: Policy Violation
           - type: section
             text:
               type: mrkdwn
