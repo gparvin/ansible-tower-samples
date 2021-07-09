@@ -1,6 +1,9 @@
-- name: ACM Policy is NonCompliant
-  community.general.slack:
-    token: "{{ slack_token }}"
-    channel: "#grc-cluster-policy-violations"
-    msg: "Status of policy {{ policy_name }} is NonCompliant on {{ cluster_name }} managed clusters {{ managed_clusters }} {{target_clusters}}"
+- name: ACM Policy Automation
+  hosts: all
+  tasks:
+    - name: ACM Policy is NonCompliant
+      community.general.slack:
+        token: "{{ slack_token }}"
+        channel: "#grc-cluster-policy-violations"
+        msg: "Status of policy {{ policy_name }} is NonCompliant on {{ cluster_name }} managed clusters {{ managed_clusters }} {{target_clusters}}"
 
