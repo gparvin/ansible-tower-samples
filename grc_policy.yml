@@ -5,5 +5,23 @@
       community.general.slack:
         token: "{{ slack_token }}"
         channel: "#grc-cluster-policy-violations"
-        msg: "Status of policy {{ policy_name }} is NonCompliant on {{ cluster_name }} managed clusters {{ managed_clusters }} {{target_clusters}}"
+        icon_url: https://www.ansible.com/favicon.ico
+        color: danger
+        blocks:
+          - type: section
+            text:
+              type: mrkdwn
+              text: |-
+                *Policy Violation*
+                Policy {{ policy_name }} in namespace {{ policy_namespace }} is NonCompliant
+          - type: context
+            elements:
+            - type: mrkdwn
+              text: |-
+                *Advanced Cluster Management Hub*
+                {{ cluster_name }}
+            - type: mrkdwn
+              text: |-
+                *Clusters*
+                NonCompliant Managed Clusters: {{ target_clusters }}
 
