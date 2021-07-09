@@ -18,9 +18,9 @@
             elements:
             - type: mrkdwn
               text: |-
-                - <https://multicloud-console.apps.{{ cluster_name }}/multicloud/policies/all|*Advanced Cluster Management Hub Policies*>
-                - <https://multicloud-console.apps.{{ cluster_name }}/multicloud/policies/all/{{policy_namespace}}/{{policy_name}}|{{ policy_name }} Policy Details>
+                <https://multicloud-console.apps.{{ cluster_name }}/multicloud/policies/all|*Advanced Cluster Management Hub Policies*>
+                  <https://multicloud-console.apps.{{ cluster_name }}/multicloud/policies/all/{{policy_namespace}}/{{policy_name}}|{{ policy_name }} Policy Details>
             - type: mrkdwn
               text: |-
                 *NonCompliant Managed Clusters*
-                - {{ target_clusters }}
+                  {{ target_clusters }}
