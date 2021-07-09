@@ -5,7 +5,7 @@
       community.general.slack:
         token: "{{ slack_token }}"
         channel: "#grc-cluster-policy-violations"
-        icon_url: https://www.ansible.com/favicon.ico
+        icon_url: ''
         color: danger
         blocks:
           - type: section
@@ -18,10 +18,9 @@
             elements:
             - type: mrkdwn
               text: |-
-                *Advanced Cluster Management Hub*
-                {{ cluster_name }}
+                - <https://multicloud-console.apps.{{ cluster_name }}/multicloud/policies/all|*Advanced Cluster Management Hub Policies*>
+                - <https://multicloud-console.apps.{{ cluster_name }}/multicloud/policies/all/{{policy_namespace}}/{{policy_name}}|{{ policy_name }} Policy Details>
             - type: mrkdwn
               text: |-
-                *Clusters*
-                NonCompliant Managed Clusters: {{ target_clusters }}
-
+                *NonCompliant Managed Clusters*
+                - {{ target_clusters }}
