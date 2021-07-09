@@ -14,11 +14,9 @@
           - type: section
             text:
               type: mrkdwn
-              text: Policy {{ policy_name }} in namespace {{ policy_namespace }} is NonCompliant
-          - type: section
-            text:
-              type: mrkdwn
-              text: <https://multicloud-console.apps.{{ cluster_name }}/multicloud/policies/all|*Advanced Cluster Management Hub Policies*> and <https://multicloud-console.apps.{{ cluster_name }}/multicloud/policies/all/{{policy_namespace}}/{{policy_name}}|{{ policy_name }} Policy Details>
+              text: |-
+                Policy {{ policy_name }} in namespace {{ policy_namespace }} is NonCompliant
+                <https://multicloud-console.apps.{{ cluster_name }}/multicloud/policies/all|*Advanced Cluster Management Hub Policies*> and <https://multicloud-console.apps.{{ cluster_name }}/multicloud/policies/all/{{policy_namespace}}/{{policy_name}}|{{ policy_name }} Policy Details>
           - type: context
             elements:
             - type: mrkdwn
