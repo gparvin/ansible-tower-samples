@@ -8,18 +8,20 @@
         icon_url: ''
         color: danger
         blocks:
+          - type: header
+            text:
+              text: *Policy Violation*
           - type: section
             text:
               type: mrkdwn
               text: |-
-                *Policy Violation*
                 Policy {{ policy_name }} in namespace {{ policy_namespace }} is NonCompliant
-          - type: context
-            elements:
             - type: mrkdwn
               text: |-
                 <https://multicloud-console.apps.{{ cluster_name }}/multicloud/policies/all|*Advanced Cluster Management Hub Policies*>
                   <https://multicloud-console.apps.{{ cluster_name }}/multicloud/policies/all/{{policy_namespace}}/{{policy_name}}|{{ policy_name }} Policy Details>
+          - type: context
+            elements:
             - type: mrkdwn
               text: |-
                 *NonCompliant Managed Clusters*
