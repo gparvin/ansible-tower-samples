@@ -8,9 +8,6 @@
         icon_url: ''
         color: danger
         blocks:
-          - type: header
-            text:
-              text: Policy Violation
           - type: section
             text:
               type: mrkdwn
