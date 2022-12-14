@@ -1,0 +1,22 @@
+- name: ACM Policy Automation
+  hosts: all
+  tasks:
+    - name: ACM Policy is NonCompliant
+      community.general.slack:
+        token: "{{ slack_token }}"
+        channel: "#grc-cluster-policy-violations"
+        icon_url: ''
+        color: danger
+        blocks:
+          - type: section
+            text:
+              type: mrkdwn
+              text: |-
+                Policy {{ policy_name }} in namespace {{ namespace }} is NonCompliant
+                <https://multicloud-console.apps.{{ hub_cluster }}/multicloud/governance|*Advanced Cluster Management Hub Policies*> and <https://multicloud-console.apps.{{ hub_cluster }}/multicloud/governance/policies/details/{{namespace}}/{{policy_name}}|{{ policy_name }} Policy Details>
+          - type: context
+            elements:
+            - type: mrkdwn
+              text: |-
+                *NonCompliant Managed Clusters*
+                  {{ target_clusters }}
